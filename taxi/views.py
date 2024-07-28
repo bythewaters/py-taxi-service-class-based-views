@@ -41,7 +41,7 @@ class DriverListView(generic.ListView):
 class DriverDetailView(generic.DetailView):
     model = Driver
 
-    def get_queryset(self) -> QuerySet:
+    def get_queryset(self) -> QuerySet[Driver]:
         return Driver.objects.prefetch_related("cars__drivers").filter(
             pk=self.kwargs["pk"]
         )
