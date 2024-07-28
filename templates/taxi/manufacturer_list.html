@@ -9,6 +9,7 @@
     </tr>
   </thead>
   <tbody>
+  {% if manufacturer_list %}
     {% for manufacturer in manufacturer_list %}
       <tr>
         <th scope="row">{{ manufacturer.id }}</th>
@@ -16,6 +17,9 @@
         <td>{{ manufacturer.country }}</td>
       </tr>
     {% endfor %}
+  {% else %}
+    <p>There is no cars!</p>
+  {% endif %}
   </tbody>
 </table>
 {% endblock %}
